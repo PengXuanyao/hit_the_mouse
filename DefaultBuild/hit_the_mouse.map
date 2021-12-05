@@ -1,0 +1,415 @@
+
+
+
+78K0R Linker W1.80                            Date: 5 Dec 2021 Page:   1
+
+Command:   -yD:\Program Files (x86)\Renesas Electronics\CS+\CACX\Device\
+           RL78\Devicefile -_msgoff -oDefaultBuild\hit_the_mouse.lmf -gi
+           00000000000000000000h -go84h,1FE00h,512 -gb0EFFFE8H -mi0 -s -
+           pDefaultBuild\hit_the_mouse.map D:\Program Files (x86)\Renesa
+           s Electronics\CS+\CACX\CA78K0R\V1.72\lib78k0r\s0rll.rel Defau
+           ltBuild\r_main.rel DefaultBuild\r_systeminit.rel DefaultBuild
+           \r_cg_cgc.rel DefaultBuild\r_cg_cgc_user.rel DefaultBuild\kb_
+           bsp.rel DefaultBuild\lcd_bsp.rel DefaultBuild\led_bsp.rel Def
+           aultBuild\seg_bsp.rel DefaultBuild\display.rel DefaultBuild\h
+           it_the_mouse.rel DefaultBuild\r_cg_timer.rel DefaultBuild\r_c
+           g_timer_user.rel -bcl0ram.lib -bcl0rm.lib -bcl0rmf.lib -iD:\P
+           rogram Files (x86)\Renesas Electronics\CS+\CACX\CA78K0R\V1.72
+           \lib78k0r
+Para-file:
+Out-file:  DefaultBuild\hit_the_mouse.lmf
+Map-file:  DefaultBuild\hit_the_mouse.map
+Direc-file:
+Directive:
+
+
+*** Link information ***
+
+    39 output segment(s)
+ 127DH byte(s) real data
+   948 symbol(s) defined
+
+
+*** Memory map ***
+
+
+  SPACE=REGULAR
+
+  MEMORY=ROM
+  BASE ADDRESS=00000H   SIZE=10000H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+         @@VECT00                     00000H    00002H  CSEG AT
+                  @@VECT00 @cstart    00000H    00002H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  @cstart    00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_main     00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_systeminit
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_cgc   00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_cgc_user
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  kb_bsp     00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  lcd_bsp    00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  led_bsp    00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  seg_bsp    00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  display    00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  hit_the_mouse
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_timer
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_timer_user
+                                      00002H    00000H
+         @@RLINIT                     00002H    00000H  CSEG UNIT64KP
+                  @@RLINIT @cstart    00002H    00000H
+                  @@RLINIT r_main     00002H    00000H
+                  @@RLINIT r_systeminit
+                                      00002H    00000H
+                  @@RLINIT r_cg_cgc   00002H    00000H
+                  @@RLINIT r_cg_cgc_user
+                                      00002H    00000H
+                  @@RLINIT kb_bsp     00002H    00000H
+                  @@RLINIT lcd_bsp    00002H    00000H
+                  @@RLINIT led_bsp    00002H    00000H
+                  @@RLINIT seg_bsp    00002H    00000H
+                  @@RLINIT display    00002H    00000H
+                  @@RLINIT hit_the_mouse
+                                      00002H    00000H
+                  @@RLINIT r_cg_timer
+                                      00002H    00000H
+                  @@RLINIT r_cg_timer_user
+                                      00002H    00000H
+                  @@RLINIT @rom       00002H    00000H
+         @@R_INIS                     00002H    00000H  CSEG UNIT64KP
+                  @@R_INIS @cstart    00002H    00000H
+                  @@R_INIS r_main     00002H    00000H
+                  @@R_INIS r_systeminit
+                                      00002H    00000H
+                  @@R_INIS r_cg_cgc   00002H    00000H
+                  @@R_INIS r_cg_cgc_user
+                                      00002H    00000H
+                  @@R_INIS kb_bsp     00002H    00000H
+                  @@R_INIS lcd_bsp    00002H    00000H
+                  @@R_INIS led_bsp    00002H    00000H
+                  @@R_INIS seg_bsp    00002H    00000H
+                  @@R_INIS display    00002H    00000H
+                  @@R_INIS hit_the_mouse
+                                      00002H    00000H
+                  @@R_INIS r_cg_timer
+                                      00002H    00000H
+                  @@R_INIS r_cg_timer_user
+                                      00002H    00000H
+                  @@R_INIS @rom       00002H    00000H
+         @@CALT                       00002H    00000H  CSEG
+                  @@CALT   @cstart    00002H    00000H
+                  @@CALT   r_main     00002H    00000H
+                  @@CALT   r_systeminit
+                                      00002H    00000H
+                  @@CALT   r_cg_cgc   00002H    00000H
+                  @@CALT   r_cg_cgc_user
+                                      00002H    00000H
+                  @@CALT   kb_bsp     00002H    00000H
+                  @@CALT   lcd_bsp    00002H    00000H
+                  @@CALT   led_bsp    00002H    00000H
+                  @@CALT   seg_bsp    00002H    00000H
+                  @@CALT   display    00002H    00000H
+                  @@CALT   hit_the_mouse
+                                      00002H    00000H
+                  @@CALT   r_cg_timer
+                                      00002H    00000H
+                  @@CALT   r_cg_timer_user
+                                      00002H    00000H
+         ??NMIROM                     00002H    00002H  CSEG
+         @@R_INIT                     00004H    0001EH  CSEG UNIT64KP
+                  @@R_INIT @cstart    00004H    00000H
+                  @@R_INIT r_main     00004H    00000H
+                  @@R_INIT r_systeminit
+                                      00004H    00000H
+                  @@R_INIT r_cg_cgc   00004H    00000H
+                  @@R_INIT r_cg_cgc_user
+                                      00004H    00000H
+                  @@R_INIT kb_bsp     00004H    00002H
+                  @@R_INIT lcd_bsp    00006H    00000H
+                  @@R_INIT led_bsp    00006H    00002H
+                  @@R_INIT seg_bsp    00008H    00002H
+                  @@R_INIT display    0000AH    00002H
+                  @@R_INIT hit_the_mouse
+                                      0000CH    00016H
+                  @@R_INIT r_cg_timer
+                                      00022H    00000H
+                  @@R_INIT r_cg_timer_user
+                                      00022H    00000H
+                  @@R_INIT @rom       00022H    00000H
+* gap *                               00022H    0000AH
+         @@VECT2C                     0002CH    00002H  CSEG AT
+                  @@VECT2C r_cg_timer_user
+                                      0002CH    00002H
+* gap *                               0002EH    00002H
+         @@VECT30                     00030H    00002H  CSEG AT
+                  @@VECT30 r_cg_timer_user
+                                      00030H    00002H
+* gap *                               00032H    0008EH
+         ?CSEGOB0                     000C0H    00004H  CSEG OPT_BYTE
+         @@CODE                       000C4H    00000H  CSEG BASE
+                  @@CODE   r_main     000C4H    00000H
+                  @@CODE   r_systeminit
+                                      000C4H    00000H
+                  @@CODE   r_cg_cgc   000C4H    00000H
+                  @@CODE   r_cg_cgc_user
+                                      000C4H    00000H
+                  @@CODE   kb_bsp     000C4H    00000H
+                  @@CODE   lcd_bsp    000C4H    00000H
+                  @@CODE   led_bsp    000C4H    00000H
+                  @@CODE   seg_bsp    000C4H    00000H
+                  @@CODE   display    000C4H    00000H
+                  @@CODE   hit_the_mouse
+                                      000C4H    00000H
+                  @@CODE   r_cg_timer
+                                      000C4H    00000H
+                  @@CODE   r_cg_timer_user
+                                      000C4H    00000H
+         ?CSEGSI                      000C4H    0000AH  CSEG
+         ?OCDSTAD                     000CEH    0000AH  CSEG
+         @@LCODE                      000D8H    00192H  CSEG BASE
+                  @@LCODE  @cstart    000D8H    000ADH
+                  @@LCODE  @cudiv     00185H    00034H
+                  @@LCODE  @curem     001B9H    00036H
+                  @@LCODE  @isrem     001EFH    00021H
+                  @@LCODE  @iurem     00210H    0002FH
+                  @@LCODE  @lmul      0023FH    0002BH
+         @@BASE                       0026AH    0008FH  CSEG BASE
+                  @@BASE   r_main     0026AH    00000H
+                  @@BASE   r_systeminit
+                                      0026AH    00000H
+                  @@BASE   r_cg_cgc   0026AH    00000H
+                  @@BASE   r_cg_cgc_user
+                                      0026AH    00000H
+                  @@BASE   kb_bsp     0026AH    00000H
+                  @@BASE   lcd_bsp    0026AH    00000H
+                  @@BASE   led_bsp    0026AH    00000H
+                  @@BASE   seg_bsp    0026AH    00000H
+                  @@BASE   display    0026AH    00000H
+                  @@BASE   hit_the_mouse
+                                      0026AH    00000H
+                  @@BASE   r_cg_timer
+                                      0026AH    00000H
+                  @@BASE   r_cg_timer_user
+                                      0026AH    0008FH
+         @@CODEL                      002F9H    00A5BH  CSEG
+                  @@CODEL  r_main     002F9H    0006CH
+                  @@CODEL  r_systeminit
+                                      00365H    0001BH
+                  @@CODEL  r_cg_cgc   00380H    00017H
+                  @@CODEL  r_cg_cgc_user
+                                      00397H    00005H
+                  @@CODEL  kb_bsp     0039CH    00186H
+                  @@CODEL  lcd_bsp    00522H    003BDH
+                  @@CODEL  led_bsp    008DFH    0004AH
+                  @@CODEL  seg_bsp    00929H    001CCH
+                  @@CODEL  display    00AF5H    00062H
+                  @@CODEL  hit_the_mouse
+                                      00B57H    00112H
+                  @@CODEL  r_cg_timer
+                                      00C69H    000EBH
+                  @@CODEL  r_cg_timer_user
+                                      00D54H    00000H
+         @@LCODEL                     00D54H    00583H  CSEG
+                  @@LCODEL rand       00D54H    00040H
+                  @@LCODEL @stkinit   00D94H    00044H
+                  @@LCODEL sprintf_n
+                                      00DD8H    0046AH
+                  @@LCODEL free       01242H    00011H
+                  @@LCODEL malloc     01253H    0000FH
+                  @@LCODEL exit       01262H    0001CH
+                  @@LCODEL @brk       0127EH    00017H
+                  @@LCODEL @sbrk      01295H    00042H
+* gap *                               012D7H    01D29H
+         @@CNST                       03000H    00040H  CSEG MIRRORP
+                  @@CNST   @cstart    03000H    00000H
+                  @@CNST   r_main     03000H    00000H
+                  @@CNST   r_systeminit
+                                      03000H    00000H
+                  @@CNST   r_cg_cgc   03000H    00000H
+                  @@CNST   r_cg_cgc_user
+                                      03000H    00000H
+                  @@CNST   kb_bsp     03000H    00000H
+                  @@CNST   lcd_bsp    03000H    00000H
+                  @@CNST   led_bsp    03000H    00000H
+                  @@CNST   seg_bsp    03000H    00000H
+                  @@CNST   display    03000H    0003AH
+                  @@CNST   hit_the_mouse
+                                      0303AH    00000H
+                  @@CNST   r_cg_timer
+                                      0303AH    00000H
+                  @@CNST   r_cg_timer_user
+                                      0303AH    00006H
+* gap *                               03040H    0CFC0H
+
+  MEMORY=RAM
+  BASE ADDRESS=FCF00H   SIZE=03100H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+         @@DATA                       FCF00H    000C4H  DSEG BASEP
+                  @@DATA   @cstart    FCF00H    000BAH
+                  @@DATA   r_main     FCFBAH    00002H
+                  @@DATA   r_systeminit
+                                      FCFBCH    00000H
+                  @@DATA   r_cg_cgc   FCFBCH    00000H
+                  @@DATA   r_cg_cgc_user
+                                      FCFBCH    00000H
+                  @@DATA   kb_bsp     FCFBCH    00006H
+                  @@DATA   lcd_bsp    FCFC2H    00000H
+                  @@DATA   led_bsp    FCFC2H    00000H
+                  @@DATA   seg_bsp    FCFC2H    00002H
+                  @@DATA   display    FCFC4H    00000H
+                  @@DATA   hit_the_mouse
+                                      FCFC4H    00000H
+                  @@DATA   r_cg_timer
+                                      FCFC4H    00000H
+                  @@DATA   r_cg_timer_user
+                                      FCFC4H    00000H
+                  @@DATA   @rom       FCFC4H    00000H
+         @@INIT                       FCFC4H    0001EH  DSEG BASEP
+                  @@INIT   @cstart    FCFC4H    00000H
+                  @@INIT   r_main     FCFC4H    00000H
+                  @@INIT   r_systeminit
+                                      FCFC4H    00000H
+                  @@INIT   r_cg_cgc   FCFC4H    00000H
+                  @@INIT   r_cg_cgc_user
+                                      FCFC4H    00000H
+                  @@INIT   kb_bsp     FCFC4H    00002H
+                  @@INIT   lcd_bsp    FCFC6H    00000H
+                  @@INIT   led_bsp    FCFC6H    00002H
+                  @@INIT   seg_bsp    FCFC8H    00002H
+                  @@INIT   display    FCFCAH    00002H
+                  @@INIT   hit_the_mouse
+                                      FCFCCH    00016H
+                  @@INIT   r_cg_timer
+                                      FCFE2H    00000H
+                  @@INIT   r_cg_timer_user
+                                      FCFE2H    00000H
+                  @@INIT   @rom       FCFE2H    00000H
+         @@INIS                       FCFE2H    00000H  DSEG UNITP
+                  @@INIS   @cstart    FCFE2H    00000H
+                  @@INIS   r_main     FCFE2H    00000H
+                  @@INIS   r_systeminit
+                                      FCFE2H    00000H
+                  @@INIS   r_cg_cgc   FCFE2H    00000H
+                  @@INIS   r_cg_cgc_user
+                                      FCFE2H    00000H
+                  @@INIS   kb_bsp     FCFE2H    00000H
+                  @@INIS   lcd_bsp    FCFE2H    00000H
+                  @@INIS   led_bsp    FCFE2H    00000H
+                  @@INIS   seg_bsp    FCFE2H    00000H
+                  @@INIS   display    FCFE2H    00000H
+                  @@INIS   hit_the_mouse
+                                      FCFE2H    00000H
+                  @@INIS   r_cg_timer
+                                      FCFE2H    00000H
+                  @@INIS   r_cg_timer_user
+                                      FCFE2H    00000H
+                  @@INIS   @rom       FCFE2H    00000H
+         @@DATS                       FCFE2H    00000H  DSEG UNITP
+                  @@DATS   @cstart    FCFE2H    00000H
+                  @@DATS   r_main     FCFE2H    00000H
+                  @@DATS   r_systeminit
+                                      FCFE2H    00000H
+                  @@DATS   r_cg_cgc   FCFE2H    00000H
+                  @@DATS   r_cg_cgc_user
+                                      FCFE2H    00000H
+                  @@DATS   kb_bsp     FCFE2H    00000H
+                  @@DATS   lcd_bsp    FCFE2H    00000H
+                  @@DATS   led_bsp    FCFE2H    00000H
+                  @@DATS   seg_bsp    FCFE2H    00000H
+                  @@DATS   display    FCFE2H    00000H
+                  @@DATS   hit_the_mouse
+                                      FCFE2H    00000H
+                  @@DATS   r_cg_timer
+                                      FCFE2H    00000H
+                  @@DATS   r_cg_timer_user
+                                      FCFE2H    00000H
+                  @@DATS   @rom       FCFE2H    00000H
+         @@INITL                      FCFE2H    00000H  DSEG UNIT64KP
+                  @@INITL  @cstart    FCFE2H    00000H
+                  @@INITL  r_main     FCFE2H    00000H
+                  @@INITL  r_systeminit
+                                      FCFE2H    00000H
+                  @@INITL  r_cg_cgc   FCFE2H    00000H
+                  @@INITL  r_cg_cgc_user
+                                      FCFE2H    00000H
+                  @@INITL  kb_bsp     FCFE2H    00000H
+                  @@INITL  lcd_bsp    FCFE2H    00000H
+                  @@INITL  led_bsp    FCFE2H    00000H
+                  @@INITL  seg_bsp    FCFE2H    00000H
+                  @@INITL  display    FCFE2H    00000H
+                  @@INITL  hit_the_mouse
+                                      FCFE2H    00000H
+                  @@INITL  r_cg_timer
+                                      FCFE2H    00000H
+                  @@INITL  r_cg_timer_user
+                                      FCFE2H    00000H
+                  @@INITL  @rom       FCFE2H    00000H
+         @@DATAL                      FCFE2H    00000H  DSEG UNIT64KP
+                  @@DATAL  @cstart    FCFE2H    00000H
+                  @@DATAL  r_main     FCFE2H    00000H
+                  @@DATAL  r_systeminit
+                                      FCFE2H    00000H
+                  @@DATAL  r_cg_cgc   FCFE2H    00000H
+                  @@DATAL  r_cg_cgc_user
+                                      FCFE2H    00000H
+                  @@DATAL  kb_bsp     FCFE2H    00000H
+                  @@DATAL  lcd_bsp    FCFE2H    00000H
+                  @@DATAL  led_bsp    FCFE2H    00000H
+                  @@DATAL  seg_bsp    FCFE2H    00000H
+                  @@DATAL  display    FCFE2H    00000H
+                  @@DATAL  hit_the_mouse
+                                      FCFE2H    00000H
+                  @@DATAL  r_cg_timer
+                                      FCFE2H    00000H
+                  @@DATAL  r_cg_timer_user
+                                      FCFE2H    00000H
+                  @@DATAL  @rom       FCFE2H    00000H
+* gap *                               FCFE2H    02E3EH
+         @@BITS                       FFE20H    00001H  BSEG
+                  @@BITS   @cstart    FFE20H.0  00000H.0
+                  @@BITS   r_main     FFE20H.0  00000H.0
+                  @@BITS   r_systeminit
+                                      FFE20H.0  00000H.0
+                  @@BITS   r_cg_cgc   FFE20H.0  00000H.0
+                  @@BITS   r_cg_cgc_user
+                                      FFE20H.0  00000H.0
+                  @@BITS   kb_bsp     FFE20H.0  00000H.0
+                  @@BITS   lcd_bsp    FFE20H.0  00000H.0
+                  @@BITS   led_bsp    FFE20H.0  00000H.0
+                  @@BITS   seg_bsp    FFE20H.0  00000H.1
+                  @@BITS   display    FFE20H.1  00000H.0
+                  @@BITS   hit_the_mouse
+                                      FFE20H.1  00000H.0
+                  @@BITS   r_cg_timer
+                                      FFE20H.1  00000H.0
+                  @@BITS   r_cg_timer_user
+                                      FFE20H.1  00000H.0
+* gap *                               FFE21H    000B3H
+         @@SEGREG                     FFED4H    00004H  DSEG AT
+                  @@SEGREG @SEGREG    FFED4H    00004H
+         @@RTARG0                     FFED8H    00008H  DSEG AT
+                  @@RTARG0 @RTARG0    FFED8H    00008H
+* gap *                               FFEE0H    00020H
+* gap (Not Free Area) *               FFF00H    00100H
+
+
+ Target chip : R5F100LG
+ Device file : V1.14
+

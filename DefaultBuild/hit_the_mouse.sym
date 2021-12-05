@@ -1,0 +1,171 @@
+#05
+;FF     PUBLIC
+02FFED8@@CPR1
+02FFEDE@@FPRF1
+02FFEDF@@FPRF2
+02FFEDE@@FPRFP
+02FFED8@@FPRS
+02FFEDC@@FPRXD
+02FFEDC@@FPRXP
+02FFEDD@@FPRXS
+0100185@@cudiv
+01001B9@@curem
+01001EF@@isrem
+0100210@@iurem
+010023F@@lsmul
+010023F@@lumul
+02FCFC4_?DATA
+02FCFE2_?DATAL
+02FCFE2_?DATS
+02FCFE2_?INIS
+02FCFE2_?INIT
+02FCFE2_?INITL
+0100002_?RLINIT
+0100002_?R_INIS
+0100022_?R_INIT
+02FCF98_@BRKADR
+02FCF86_@DIVR
+02FCF80_@FNCENT
+02FCF00_@FNCTBL
+02FCF8A_@LDIVR
+0000000_@MAA
+02FCFBA_@MEMBTM
+02FCF9A_@MEMTOP
+02FFED8_@RTARG0
+02FFED9_@RTARG1
+02FFEDA_@RTARG2
+02FFEDB_@RTARG3
+02FFEDC_@RTARG4
+02FFEDD_@RTARG5
+02FFEDE_@RTARG6
+02FFEDF_@RTARG7
+01FFE20_@SADBEG
+00000C0_@SADSIZ
+02FCF82_@SEED
+02FFED4_@SEGAX
+02FFED5_@SEGBC
+02FFED6_@SEGDE
+02FFED7_@SEGHL
+00FFE20_@STBEG
+00FCFE2_@STEND
+02FCF92_@TOKPTR
+0100185_@cend
+01000D8_@cstart
+010002C_@vect2c
+0100030_@vect30
+0100647_CursorSet
+0100938_Getcode
+01003BC_Keyboard_scan
+0100522_LCD_PORT_Create
+01008DF_LED_Flowing
+0100921_LED_Init
+010091B_LED_Port_Init
+01007BE_LcdFill_Level
+010084D_LcdFill_REC
+0100747_LcdFill_Vertical
+0100380_R_CGC_Create
+0100397_R_CGC_Get_ResetSource
+010034E_R_MAIN_UserInit
+0100365_R_Systeminit
+0100D10_R_TAU0_Channel0_Start
+0100D21_R_TAU0_Channel0_Stop
+0100D32_R_TAU0_Channel2_Start
+0100D43_R_TAU0_Channel2_Stop
+0100C69_R_TAU0_Create
+0100934_Seg_Init
+0100929_Seg_Port_Init
+01005DD_WriteStr
+02FCFBD_array_key
+0300100_bit_control
+010127E_brk
+0100B40_curDisplay
+02FCFD8_cur_game_status
+010039C_delay
+0100AF5_delay_ms
+0100C46_detectIfHit
+02FCFDD_diff
+01009E2_display
+0100A4F_displayNum
+02FCF96_errno
+0101262_exit
+02FCFC2_flag_digital_led
+0101242_free
+0100BBD_freshStatus
+0100B88_game
+0100378_hdwinit
+0100B71_home
+0100B57_initMap
+0100BB4_initStatus
+01003B8_kb_Init
+01003AE_kb_PortInit
+02FCFC4_kb_temp
+0100567_lcd_busy
+0100539_lcd_delay
+01006A4_lcd_display
+01005F2_lcd_init
+0100597_lcd_write
+01002F9_main
+0101253_malloc
+02FCFCC_map
+02FCFDC_mode
+02FCFDE_myrecord
+02FCFBC_num_keyboard
+0100D54_rand
+0100B9D_record
+0100BB0_restartGame
+0101295_sbrk
+02FCFDF_score
+0100B31_scoreDisplay
+0100B3F_screenDisplay
+0100C06_setStatusMap
+010055A_shortdel
+0100B18_showHome
+0100B48_showRecord
+0100DD8_sprintf
+0100DD8_sprintf_n
+0100D94_stkinit
+010127E_strbrk
+0101295_strsbrk
+02FCFC1_testvalue
+02FCFE0_time
+02FCFE1_timerflag
+;FF     @cstart
+;FF     r_main
+<02FCFBA_lastkey
+;FF     r_systeminit
+;FF     r_cg_cgc
+;FF     r_cg_cgc_user
+;FF     kb_bsp
+;FF     lcd_bsp
+;FF     led_bsp
+<02FCFC6_flag
+;FF     seg_bsp
+<02FCFC9_count
+02FCFC8_count
+;FF     display
+<0103000L0011
+02FCFCA_highest_record
+;FF     hit_the_mouse
+;FF     r_cg_timer
+;FF     r_cg_timer_user
+<010303AL0005
+010026A_r_tau0_channel0_interrupt
+010029A_r_tau0_channel2_interrupt
+;FF     @cudiv
+;FF     @curem
+;FF     @isrem
+;FF     @iurem
+;FF     rand
+;FF     @lmul
+;FF     @SEGREG
+;FF     @stkinit
+;FF     @RTARG0
+;FF     sprintf_n
+;FF     free
+;FF     malloc
+;FF     exit
+;FF     @brk
+;FF     @sbrk
+;FF     @rom
+=
+
