@@ -169,6 +169,7 @@ void detectIfHit(void)
 void end(void)
 {
     char text_buffer[BUFFERLENTH];
+    timerflag = 0;
     R_TAU0_Channel2_Stop();
     sprintf(text_buffer, "your score:%d   ", score);
     if (score >= myrecord)

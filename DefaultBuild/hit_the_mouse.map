@@ -26,7 +26,7 @@ Directive:
 *** Link information ***
 
     39 output segment(s)
- 1436H byte(s) real data
+ 1439H byte(s) real data
    999 symbol(s) defined
 
 
@@ -207,7 +207,7 @@ Directive:
                                       0026AH    00000H
                   @@BASE   r_cg_timer_user
                                       0026AH    00070H
-         @@CODEL                      002DAH    00BD9H  CSEG
+         @@CODEL                      002DAH    00BDCH  CSEG
                   @@CODEL  r_main     002DAH    0008AH
                   @@CODEL  r_systeminit
                                       00364H    0001BH
@@ -220,22 +220,22 @@ Directive:
                   @@CODEL  seg_bsp    00928H    001CCH
                   @@CODEL  display    00AF4H    00125H
                   @@CODEL  hit_the_mouse
-                                      00C19H    001AFH
+                                      00C19H    001B2H
                   @@CODEL  r_cg_timer
-                                      00DC8H    000EBH
+                                      00DCBH    000EBH
                   @@CODEL  r_cg_timer_user
-                                      00EB3H    00000H
-         @@LCODEL                     00EB3H    00583H  CSEG
-                  @@LCODEL rand       00EB3H    00040H
-                  @@LCODEL @stkinit   00EF3H    00044H
+                                      00EB6H    00000H
+         @@LCODEL                     00EB6H    00583H  CSEG
+                  @@LCODEL rand       00EB6H    00040H
+                  @@LCODEL @stkinit   00EF6H    00044H
                   @@LCODEL sprintf_n
-                                      00F37H    0046AH
-                  @@LCODEL free       013A1H    00011H
-                  @@LCODEL malloc     013B2H    0000FH
-                  @@LCODEL exit       013C1H    0001CH
-                  @@LCODEL @brk       013DDH    00017H
-                  @@LCODEL @sbrk      013F4H    00042H
-* gap *                               01436H    01BCAH
+                                      00F3AH    0046AH
+                  @@LCODEL free       013A4H    00011H
+                  @@LCODEL malloc     013B5H    0000FH
+                  @@LCODEL exit       013C4H    0001CH
+                  @@LCODEL @brk       013E0H    00017H
+                  @@LCODEL @sbrk      013F7H    00042H
+* gap *                               01439H    01BC7H
          @@CNST                       03000H    0009AH  CSEG MIRRORP
                   @@CNST   @cstart    03000H    00000H
                   @@CNST   r_main     03000H    00000H
