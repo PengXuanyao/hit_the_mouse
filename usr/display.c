@@ -4,11 +4,11 @@
  * @Autor: PengXuanyao
  * @Date: 2021-12-04 18:14:09
  * @LastEditors: PengXuanyao
- * @LastEditTime: 2021-12-05 23:45:58
+ * @LastEditTime: 2021-12-06 12:11:49
  */
 #include "r_cg_userdefine.h"
 /**
- * @description: 
+ * @description:
  * @param {uint16_t} s
  * @return {*}
  * @author: PengXuanyao
@@ -53,7 +53,30 @@ void scoreDisplay(void)
  * @return {*}
  * @author: PengXuanyao
  */
-void screenDisplay(void){};
+void screenDisplay(void)
+{
+    uint8_t i;
+    char text_buffer[BUFFERLENTH];
+    volatile uint8_t *pos = (uint8_t *)malloc(cur_game_status.num * sizeof(uint8_t));
+    for (i = 0; i < cur_game_status.num; i++)
+    {
+        pos[i] = cur_game_status.pos[i]; // get the origin pos
+        pos[i] = posTransfer(pos[i]);    // position after transfer
+    }
+    lcd_display(0, "  Hit The Mouse  ");
+    for (i = 8; i < 32; i++)
+    {
+        if ((i % 8) < 2 || (i % 8) > 5)
+        {
+            lcd_display(i, "#");
+        }
+        else if (i == pos[0] || i == pos[1] || i == pos[2])
+        {
+            lcd_display(i, "@");
+        }
+    }
+    free(pos);
+};
 /**
  * @description: display the cur_status
  * @param {*}
@@ -62,8 +85,7 @@ void screenDisplay(void){};
  */
 void curDisplay(void)
 {
-    scoreDisplay();  //use the segment led
-    screenDisplay(); //use the lcd
+    screenDisplay(); // use the lcd
 };
 /**
  * @description: show record on the screen
@@ -78,5 +100,26 @@ void showRecord(uint8_t cur_record)
     {
         highest_record = cur_record;
     }
-    //LCD_show
+}
+/**
+ * @description: position transfer
+ * @param {uint8_t} pos
+ * @return {*}
+ * @author: PengXuanyao
+ */
+uint8_t posTransfer(uint8_t pos)
+{
+    if ((pos >= 0) && (pos < 4))
+    {
+        pos = pos + 18; // the lcd display is not setted as the custom order, so we have to transfer the position
+    }
+    else if ((pos >= 4) && (pos < 8))
+    {
+        pos = pos + 6; // the lcd display is not setted as the custom order, so we have to transfer the position
+    }
+    else if ((pos >= 8) && (pos < 12))
+    {
+        pos = pos + 18; // the lcd display is not setted as the custom order, so we have to transfer the position
+    }
+    return pos;
 }

@@ -23,7 +23,7 @@
 * Device(s)    : R5F100LG
 * Tool-Chain   : CA78K0R
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 2021-12-05
+* Creation Date: 2021-12-06
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -71,11 +71,8 @@ __interrupt static void r_tau0_channel0_interrupt(void)
 __interrupt static void r_tau0_channel2_interrupt(void)
 {
     /* Start user code. Do not edit comment generated here */
-    char text_buffer[32];
     time = (time - 1 + 60) % 60;
     freshStatus();
-    sprintf(text_buffer,"my:%d",score);
-    lcd_display(0, text_buffer);
     /* End user code. Do not edit comment generated here */
 }
 

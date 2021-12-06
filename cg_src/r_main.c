@@ -1,30 +1,30 @@
 /***********************************************************************************************************************
-* DISCLAIMER
-* This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products.
-* No other uses are authorized. This software is owned by Renesas Electronics Corporation and is protected under all
-* applicable laws, including copyright laws. 
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIESREGARDING THIS SOFTWARE, WHETHER EXPRESS, IMPLIED
-* OR STATUTORY, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-* NON-INFRINGEMENT.  ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY
-* LAW, NEITHER RENESAS ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE FOR ANY DIRECT,
-* INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR
-* ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-* Renesas reserves the right, without notice, to make changes to this software and to discontinue the availability 
-* of this software. By using this software, you agree to the additional terms and conditions found by accessing the 
-* following link:
-* http://www.renesas.com/disclaimer
-*
-* Copyright (C) 2011, 2017 Renesas Electronics Corporation. All rights reserved.
-***********************************************************************************************************************/
+ * DISCLAIMER
+ * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products.
+ * No other uses are authorized. This software is owned by Renesas Electronics Corporation and is protected under all
+ * applicable laws, including copyright laws.
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIESREGARDING THIS SOFTWARE, WHETHER EXPRESS, IMPLIED
+ * OR STATUTORY, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NON-INFRINGEMENT.  ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY
+ * LAW, NEITHER RENESAS ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR
+ * ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ * Renesas reserves the right, without notice, to make changes to this software and to discontinue the availability
+ * of this software. By using this software, you agree to the additional terms and conditions found by accessing the
+ * following link:
+ * http://www.renesas.com/disclaimer
+ *
+ * Copyright (C) 2011, 2017 Renesas Electronics Corporation. All rights reserved.
+ ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name    : r_main.c
-* Version      : CodeGenerator for RL78/G13 V2.04.00.03 [05 May 2017]
-* Device(s)    : R5F100LG
-* Tool-Chain   : CA78K0R
-* Description  : This file implements main function.
-* Creation Date: 2021-12-05
-***********************************************************************************************************************/
+ * File Name    : r_main.c
+ * Version      : CodeGenerator for RL78/G13 V2.04.00.03 [05 May 2017]
+ * Device(s)    : R5F100LG
+ * Tool-Chain   : CA78K0R
+ * Description  : This file implements main function.
+ * Creation Date: 2021-12-06
+ ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
 Pragma directive
@@ -50,26 +50,31 @@ Global variables and functions
 void R_MAIN_UserInit(void);
 
 /***********************************************************************************************************************
-* Function Name: main
-* Description  : This function implements main function.
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
+ * Function Name: main
+ * Description  : This function implements main function.
+ * Arguments    : None
+ * Return Value : None
+ ***********************************************************************************************************************/
 void main(void)
 {
+    static uint8_t mode = HOME;
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
     while (1U)
     {
-        //keyboard detect, record the last press
+        // keyboard detect, record the last press
         static uint8_t lastkey;
         Keyboard_scan();
-        if (num_keyboard <= MODENUM)
+        if (time == 0)
+        {
+            mode = END;
+        }
+        if (num_keyboard <= MODENUM && num_keyboard != 0)
         {
             mode = num_keyboard;
         }
 
-        //choose
+        // choose
         if (mode == HOME)
         {
             CLEAN_SCREEN();
@@ -77,7 +82,6 @@ void main(void)
         }
         else if (mode == GAME)
         {
-            
             CLEAN_SCREEN();
             game();
         }
@@ -87,16 +91,21 @@ void main(void)
             record();
             LcdFill_REC();
         }
+        else if (mode == END)
+        {
+            CLEAN_SCREEN();
+            end();
+        }
     }
     /* End user code. Do not edit comment generated here */
 }
 
 /***********************************************************************************************************************
-* Function Name: R_MAIN_UserInit
-* Description  : This function adds user code before implementing main function.
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
+ * Function Name: R_MAIN_UserInit
+ * Description  : This function adds user code before implementing main function.
+ * Arguments    : None
+ * Return Value : None
+ ***********************************************************************************************************************/
 void R_MAIN_UserInit(void)
 {
     /* Start user code. Do not edit comment generated here */

@@ -23,7 +23,7 @@
 * Device(s)    : R5F100LG
 * Tool-Chain   : CA78K0R
 * Description  : This file implements device driver for CGC module.
-* Creation Date: 2021-12-05
+* Creation Date: 2021-12-06
 ***********************************************************************************************************************/
 
 #ifndef CGC_H

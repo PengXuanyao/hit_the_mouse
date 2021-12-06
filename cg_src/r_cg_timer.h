@@ -23,7 +23,7 @@
 * Device(s)    : R5F100LG
 * Tool-Chain   : CA78K0R
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 2021-12-05
+* Creation Date: 2021-12-06
 ***********************************************************************************************************************/
 
 #ifndef TAU_H
@@ -400,7 +400,7 @@ Macro definitions
 /* 16-bit timer data register 02 (TDR02) */
 #define _F423_TAU_TDR02_VALUE                   (0xF423U)
 /* Clock divisor for TAU0 channel 2 */
-#define _0100_TAU0_CHANNEL2_DIVISOR             (0x0100U)
+#define _0200_TAU0_CHANNEL2_DIVISOR             (0x0200U)
 
 /***********************************************************************************************************************
 Typedef definitions

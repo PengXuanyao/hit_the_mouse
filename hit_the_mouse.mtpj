@@ -237,6 +237,18 @@
     <Instance Guid="0eb82fc5-0e03-45cf-8ae3-e95466265d1a">
       <MemoCount>0</MemoCount>
     </Instance>
+    <Instance Guid="ee7a16a0-8b13-45c3-92b4-e02123b77a2e">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="0be4a770-2f4b-41b7-b6d5-824927fb7cb7">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="14e035bb-ef73-4f35-8189-0d9afde681fc">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="41927b3f-64c8-4f72-a981-518e305085fb">
+      <MemoCount>0</MemoCount>
+    </Instance>
     <Instance Guid="488c3ee1-d8ea-4eaa-8a8f-d21069fefe3d">
       <MemoCount>0</MemoCount>
     </Instance>
@@ -274,18 +286,6 @@
       <MemoCount>0</MemoCount>
     </Instance>
     <Instance Guid="72d15739-58ec-493c-ab87-77727d43ffe9">
-      <MemoCount>0</MemoCount>
-    </Instance>
-    <Instance Guid="0be4a770-2f4b-41b7-b6d5-824927fb7cb7">
-      <MemoCount>0</MemoCount>
-    </Instance>
-    <Instance Guid="14e035bb-ef73-4f35-8189-0d9afde681fc">
-      <MemoCount>0</MemoCount>
-    </Instance>
-    <Instance Guid="41927b3f-64c8-4f72-a981-518e305085fb">
-      <MemoCount>0</MemoCount>
-    </Instance>
-    <Instance Guid="ee7a16a0-8b13-45c3-92b4-e02123b77a2e">
       <MemoCount>0</MemoCount>
     </Instance>
   </Class>
@@ -348,21 +348,21 @@
       <SourceItemType2>CSource</SourceItemType2>
       <SourceItemGuid3>8ff45b17-6112-4e33-928e-f308b05c44ae</SourceItemGuid3>
       <SourceItemType3>CSource</SourceItemType3>
-      <SourceItemGuid4>83b264e8-1be6-41c5-a791-b2df3da4b6f4</SourceItemGuid4>
+      <SourceItemGuid4>e59a222d-c733-412e-959f-621954405dd0</SourceItemGuid4>
       <SourceItemType4>CSource</SourceItemType4>
-      <SourceItemGuid5>c07742d1-1390-403f-a32d-4542a509f8e5</SourceItemGuid5>
+      <SourceItemGuid5>03e42df1-a0d7-4f27-8792-46b746f3285c</SourceItemGuid5>
       <SourceItemType5>CSource</SourceItemType5>
-      <SourceItemGuid6>fcd60482-9575-4571-8026-a01e08e7cfb4</SourceItemGuid6>
+      <SourceItemGuid6>83b264e8-1be6-41c5-a791-b2df3da4b6f4</SourceItemGuid6>
       <SourceItemType6>CSource</SourceItemType6>
-      <SourceItemGuid7>cb3731f5-dd84-4f02-8cc0-dd22466c60f7</SourceItemGuid7>
+      <SourceItemGuid7>c07742d1-1390-403f-a32d-4542a509f8e5</SourceItemGuid7>
       <SourceItemType7>CSource</SourceItemType7>
-      <SourceItemGuid8>b7ca51e4-30e2-4459-899a-dcac57764925</SourceItemGuid8>
+      <SourceItemGuid8>fcd60482-9575-4571-8026-a01e08e7cfb4</SourceItemGuid8>
       <SourceItemType8>CSource</SourceItemType8>
-      <SourceItemGuid9>eea2b408-5da5-47e6-b05f-2840233d03e5</SourceItemGuid9>
+      <SourceItemGuid9>cb3731f5-dd84-4f02-8cc0-dd22466c60f7</SourceItemGuid9>
       <SourceItemType9>CSource</SourceItemType9>
-      <SourceItemGuid10>e59a222d-c733-412e-959f-621954405dd0</SourceItemGuid10>
+      <SourceItemGuid10>b7ca51e4-30e2-4459-899a-dcac57764925</SourceItemGuid10>
       <SourceItemType10>CSource</SourceItemType10>
-      <SourceItemGuid11>03e42df1-a0d7-4f27-8792-46b746f3285c</SourceItemGuid11>
+      <SourceItemGuid11>eea2b408-5da5-47e6-b05f-2840233d03e5</SourceItemGuid11>
       <SourceItemType11>CSource</SourceItemType11>
       <SourceItemCount>12</SourceItemCount>
       <VfiSourceItemCount>0</VfiSourceItemCount>
@@ -900,11 +900,11 @@ cg_src
       <SourceItem3-IsLockedByUser>False</SourceItem3-IsLockedByUser>
       <SourceItem3-BuildingTarget-0>True</SourceItem3-BuildingTarget-0>
       <SourceItem3-IndividualCompileOption-0>False</SourceItem3-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem4--0>-8585632682090772289</TimeTagModified-SourceItem4--0>
+      <TimeTagModified-SourceItem4--0>-8585629023256615220</TimeTagModified-SourceItem4--0>
       <SourceItem4-IsLockedByUser>False</SourceItem4-IsLockedByUser>
       <SourceItem4-BuildingTarget-0>True</SourceItem4-BuildingTarget-0>
       <SourceItem4-IndividualCompileOption-0>False</SourceItem4-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem5--0>-8585632682090772289</TimeTagModified-SourceItem5--0>
+      <TimeTagModified-SourceItem5--0>-8585629023256615220</TimeTagModified-SourceItem5--0>
       <SourceItem5-IsLockedByUser>False</SourceItem5-IsLockedByUser>
       <SourceItem5-BuildingTarget-0>True</SourceItem5-BuildingTarget-0>
       <SourceItem5-IndividualCompileOption-0>False</SourceItem5-IndividualCompileOption-0>
@@ -916,19 +916,19 @@ cg_src
       <SourceItem7-IsLockedByUser>False</SourceItem7-IsLockedByUser>
       <SourceItem7-BuildingTarget-0>True</SourceItem7-BuildingTarget-0>
       <SourceItem7-IndividualCompileOption-0>False</SourceItem7-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem8--0>-8585629933427623877</TimeTagModified-SourceItem8--0>
+      <TimeTagModified-SourceItem8--0>-8585632682090772289</TimeTagModified-SourceItem8--0>
       <SourceItem8-IsLockedByUser>False</SourceItem8-IsLockedByUser>
       <SourceItem8-BuildingTarget-0>True</SourceItem8-BuildingTarget-0>
       <SourceItem8-IndividualCompileOption-0>False</SourceItem8-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem9--0>-8585629933427623877</TimeTagModified-SourceItem9--0>
+      <TimeTagModified-SourceItem9--0>-8585632682090772289</TimeTagModified-SourceItem9--0>
       <SourceItem9-IsLockedByUser>False</SourceItem9-IsLockedByUser>
       <SourceItem9-BuildingTarget-0>True</SourceItem9-BuildingTarget-0>
       <SourceItem9-IndividualCompileOption-0>False</SourceItem9-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem10--0>-8585629023256615220</TimeTagModified-SourceItem10--0>
+      <TimeTagModified-SourceItem10--0>-8585629933427623877</TimeTagModified-SourceItem10--0>
       <SourceItem10-IsLockedByUser>False</SourceItem10-IsLockedByUser>
       <SourceItem10-BuildingTarget-0>True</SourceItem10-BuildingTarget-0>
       <SourceItem10-IndividualCompileOption-0>False</SourceItem10-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem11--0>-8585629023256615220</TimeTagModified-SourceItem11--0>
+      <TimeTagModified-SourceItem11--0>-8585629933427623877</TimeTagModified-SourceItem11--0>
       <SourceItem11-IsLockedByUser>False</SourceItem11-IsLockedByUser>
       <SourceItem11-BuildingTarget-0>True</SourceItem11-BuildingTarget-0>
       <SourceItem11-IndividualCompileOption-0>False</SourceItem11-IndividualCompileOption-0>
@@ -4543,16 +4543,16 @@ cg_src
     &lt;/FUNC&gt;
     &lt;TAG&gt;
       &lt;GlobleUserTag&gt;
+        &lt;cg_security4 Name="cg_security4" Value="00" /&gt;
         &lt;cg_security9 Name="cg_security9" Value="00" /&gt;
         &lt;cg_security7 Name="cg_security7" Value="00" /&gt;
         &lt;cg_security5 Name="cg_security5" Value="00" /&gt;
         &lt;cg_crc_area Name="cg_crc_area" Value="00" /&gt;
-        &lt;rrm Name="rrm" Value="1FE00" /&gt;
         &lt;cg_security3 Name="cg_security3" Value="00" /&gt;
         &lt;cg_security0 Name="cg_security0" Value="00" /&gt;
         &lt;cg_security1 Name="cg_security1" Value="00" /&gt;
-        &lt;cg_ocd_ram_size Name="cg_ocd_ram_size" Value="512" /&gt;
         &lt;clock_option Name="clock_option" Value="E8" /&gt;
+        &lt;lvi_option Name="lvi_option" Value="FF" /&gt;
         &lt;pior_value Name="pior_value" Value="00" /&gt;
         &lt;cg_option Name="cg_option" Value="84" /&gt;
         &lt;cg_security8 Name="cg_security8" Value="00" /&gt;
@@ -4561,9 +4561,9 @@ cg_src
         &lt;cg_onchip Name="cg_onchip" Value="" /&gt;
         &lt;cg_security2 Name="cg_security2" Value="00" /&gt;
         &lt;cg_iawctl_value Name="cg_iawctl_value" Value="00" /&gt;
-        &lt;lvi_option Name="lvi_option" Value="FF" /&gt;
+        &lt;cg_ocd_ram_size Name="cg_ocd_ram_size" Value="512" /&gt;
         &lt;wdt_option Name="wdt_option" Value="EF" /&gt;
-        &lt;cg_security4 Name="cg_security4" Value="00" /&gt;
+        &lt;rrm Name="rrm" Value="1FE00" /&gt;
       &lt;/GlobleUserTag&gt;
     &lt;/TAG&gt;
   &lt;/DIR&gt;
@@ -5319,7 +5319,7 @@ cg_src
           &lt;setting name="OperationMode" value="16bits" /&gt;
           &lt;setting name="Count_clock" value="MCK clock" /&gt;
           &lt;setting name="Sub_clock_mode" value="-1" /&gt;
-          &lt;setting name="Interval_value" value="500" /&gt;
+          &lt;setting name="Interval_value" value="1000" /&gt;
           &lt;setting name="Value_scale" value="0" /&gt;
           &lt;setting name="Intervalvalue_High8bits" value="100" /&gt;
           &lt;setting name="Intervalvalue_High8bits_scale" value="-1" /&gt;

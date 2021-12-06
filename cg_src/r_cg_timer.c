@@ -23,7 +23,7 @@
 * Device(s)    : R5F100LG
 * Tool-Chain   : CA78K0R
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 2021-12-05
+* Creation Date: 2021-12-06
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -56,7 +56,7 @@ Global variables and functions
 void R_TAU0_Create(void)
 {
     TAU0EN = 1U;    /* supplies input clock */
-    TPS0 = _0002_TAU_CKM0_FCLK_2 | _0080_TAU_CKM1_FCLK_8 | _0000_TAU_CKM2_FCLK_1 | _0000_TAU_CKM3_FCLK_8;
+    TPS0 = _0002_TAU_CKM0_FCLK_2 | _0090_TAU_CKM1_FCLK_9 | _0000_TAU_CKM2_FCLK_1 | _0000_TAU_CKM3_FCLK_8;
     /* Stop all channels */
     TT0 = _0001_TAU_CH0_STOP_TRG_ON | _0002_TAU_CH1_STOP_TRG_ON | _0004_TAU_CH2_STOP_TRG_ON |
           _0008_TAU_CH3_STOP_TRG_ON | _0010_TAU_CH4_STOP_TRG_ON | _0020_TAU_CH5_STOP_TRG_ON |
