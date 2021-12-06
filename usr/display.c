@@ -4,7 +4,7 @@
  * @Autor: PengXuanyao
  * @Date: 2021-12-04 18:14:09
  * @LastEditors: PengXuanyao
- * @LastEditTime: 2021-12-06 12:11:49
+ * @LastEditTime: 2021-12-06 16:35:44
  */
 #include "r_cg_userdefine.h"
 /**
@@ -34,7 +34,7 @@ void showHome(void)
     lcd_display(0, "  Hit The Mouse  "
                    "     ´òµØÊó     "
                    "1.Home 2.Start "
-                   " 3.Record");
+                   " 3.Record 4.End");
     delay_ms(10);
 }
 /**
@@ -87,20 +87,7 @@ void curDisplay(void)
 {
     screenDisplay(); // use the lcd
 };
-/**
- * @description: show record on the screen
- * @param {uint8_t} cur_record
- * @return {*}
- * @author: PengXuanyao
- */
-void showRecord(uint8_t cur_record)
-{
-    static uint8_t highest_record = 0;
-    if (cur_record > highest_record)
-    {
-        highest_record = cur_record;
-    }
-}
+
 /**
  * @description: position transfer
  * @param {uint8_t} pos

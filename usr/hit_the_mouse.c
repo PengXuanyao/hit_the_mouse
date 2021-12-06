@@ -4,7 +4,7 @@
  * @Autor: PengXuanyao
  * @Date: 2021-12-01 14:13:17
  * @LastEditors: PengXuanyao
- * @LastEditTime: 2021-12-06 13:44:53
+ * @LastEditTime: 2021-12-06 16:41:20
  */
 
 #include "r_cg_userdefine.h"
@@ -46,7 +46,7 @@ void home(void)
     initMap();
     score = 0;
     timerflag = 0;
-    time = 0;
+    time = 60;
 }
 /**
  * @description: game status is on
@@ -77,10 +77,13 @@ void game(void)
  */
 void record(void)
 {
-    R_TAU0_Channel2_Stop();
-    showRecord(myrecord);
+    char text_buffer[BUFFERLENTH];
     timerflag = 0;
-    time = 0;
+    time = 60;
+    R_TAU0_Channel2_Stop();
+    sprintf(text_buffer, "your highest score:%d   ", myrecord);
+    lcd_display(16, text_buffer);
+    delay_ms(5);
 }
 /**
  * @description: use to fresh the status
@@ -91,12 +94,35 @@ void record(void)
 void freshStatus(void)
 {
     uint8_t i;
+    static uint8_t last_score;
     for (i = 0; i < cur_game_status.num; i++)
     {
         cur_game_status.pos[i] = 3;           // random 3 points
         cur_game_status.pos[i] = rand() % 12; // random 3 points
     }
     setStatusMap(&cur_game_status);
+    switch (score - last_score)
+    {
+    case 0:
+	LED_ALL_OFF();
+        break;    
+    case 1:
+        LED_ALL_OFF();
+        L1_ON();
+        break;
+    case 2:
+        LED_ALL_OFF();
+        L1_ON();
+        L2_ON();
+        break;
+    case 3:
+        LED_ALL_OFF();
+        L1_ON();
+        L2_ON();
+        L3_ON();
+        break;
+    }
+    last_score = score;
 };
 /**
  * @description: set the map
@@ -142,8 +168,8 @@ void detectIfHit(void)
  */
 void end(void)
 {
-    R_TAU0_Channel2_Stop();
     char text_buffer[BUFFERLENTH];
+    R_TAU0_Channel2_Stop();
     sprintf(text_buffer, "your score:%d   ", score);
     if (score >= myrecord)
     {

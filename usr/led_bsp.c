@@ -61,5 +61,5 @@ void LED_Port_Init(void)
 void LED_Init(void)
 {
 	LED_Port_Init();
-	LED_ALL_ON();
+	LED_ALL_OFF();
 }

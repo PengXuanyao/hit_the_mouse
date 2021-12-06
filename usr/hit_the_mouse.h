@@ -4,7 +4,7 @@
  * @Autor: PengXuanyao
  * @Date: 2021-12-01 14:27:25
  * @LastEditors: PengXuanyao
- * @LastEditTime: 2021-12-06 13:36:43
+ * @LastEditTime: 2021-12-06 16:34:19
  */
 #ifndef __HIT_THE_MOUSE__
 #define __HIT_THE_MOUSE__
@@ -18,7 +18,7 @@
 #define MISMOU 2 // miss the mouse
 #define NULL 0
 // mode
-#define MODENUM 3
+#define MODENUM 4
 #define HOME 1   // show home mode
 #define GAME 2   // game mode
 #define RECORD 3 // show record mode

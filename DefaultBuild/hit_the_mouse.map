@@ -26,8 +26,8 @@ Directive:
 *** Link information ***
 
     39 output segment(s)
- 13C5H byte(s) real data
-  1003 symbol(s) defined
+ 1436H byte(s) real data
+   999 symbol(s) defined
 
 
 *** Memory map ***
@@ -132,7 +132,7 @@ Directive:
                   @@CALT   r_cg_timer_user
                                       00002H    00000H
          ??NMIROM                     00002H    00002H  CSEG
-         @@R_INIT                     00004H    00020H  CSEG UNIT64KP
+         @@R_INIT                     00004H    0001EH  CSEG UNIT64KP
                   @@R_INIT @cstart    00004H    00000H
                   @@R_INIT r_main     00004H    00002H
                   @@R_INIT r_systeminit
@@ -144,15 +144,15 @@ Directive:
                   @@R_INIT lcd_bsp    00008H    00000H
                   @@R_INIT led_bsp    00008H    00002H
                   @@R_INIT seg_bsp    0000AH    00002H
-                  @@R_INIT display    0000CH    00002H
+                  @@R_INIT display    0000CH    00000H
                   @@R_INIT hit_the_mouse
-                                      0000EH    00016H
+                                      0000CH    00016H
                   @@R_INIT r_cg_timer
-                                      00024H    00000H
+                                      00022H    00000H
                   @@R_INIT r_cg_timer_user
-                                      00024H    00000H
-                  @@R_INIT @rom       00024H    00000H
-* gap *                               00024H    00008H
+                                      00022H    00000H
+                  @@R_INIT @rom       00022H    00000H
+* gap *                               00022H    0000AH
          @@VECT2C                     0002CH    00002H  CSEG AT
                   @@VECT2C r_cg_timer_user
                                       0002CH    00002H
@@ -207,36 +207,36 @@ Directive:
                                       0026AH    00000H
                   @@BASE   r_cg_timer_user
                                       0026AH    00070H
-         @@CODEL                      002DAH    00B86H  CSEG
-                  @@CODEL  r_main     002DAH    0008EH
+         @@CODEL                      002DAH    00BD9H  CSEG
+                  @@CODEL  r_main     002DAH    0008AH
                   @@CODEL  r_systeminit
-                                      00368H    0001BH
-                  @@CODEL  r_cg_cgc   00383H    00017H
+                                      00364H    0001BH
+                  @@CODEL  r_cg_cgc   0037FH    00017H
                   @@CODEL  r_cg_cgc_user
-                                      0039AH    00005H
-                  @@CODEL  kb_bsp     0039FH    00186H
-                  @@CODEL  lcd_bsp    00525H    003BDH
-                  @@CODEL  led_bsp    008E2H    0004AH
-                  @@CODEL  seg_bsp    0092CH    001CCH
-                  @@CODEL  display    00AF8H    00134H
+                                      00396H    00005H
+                  @@CODEL  kb_bsp     0039BH    00186H
+                  @@CODEL  lcd_bsp    00521H    003BDH
+                  @@CODEL  led_bsp    008DEH    0004AH
+                  @@CODEL  seg_bsp    00928H    001CCH
+                  @@CODEL  display    00AF4H    00125H
                   @@CODEL  hit_the_mouse
-                                      00C2CH    00149H
+                                      00C19H    001AFH
                   @@CODEL  r_cg_timer
-                                      00D75H    000EBH
+                                      00DC8H    000EBH
                   @@CODEL  r_cg_timer_user
-                                      00E60H    00000H
-         @@LCODEL                     00E60H    00583H  CSEG
-                  @@LCODEL rand       00E60H    00040H
-                  @@LCODEL @stkinit   00EA0H    00044H
+                                      00EB3H    00000H
+         @@LCODEL                     00EB3H    00583H  CSEG
+                  @@LCODEL rand       00EB3H    00040H
+                  @@LCODEL @stkinit   00EF3H    00044H
                   @@LCODEL sprintf_n
-                                      00EE4H    0046AH
-                  @@LCODEL free       0134EH    00011H
-                  @@LCODEL malloc     0135FH    0000FH
-                  @@LCODEL exit       0136EH    0001CH
-                  @@LCODEL @brk       0138AH    00017H
-                  @@LCODEL @sbrk      013A1H    00042H
-* gap *                               013E3H    01C1DH
-         @@CNST                       03000H    0007AH  CSEG MIRRORP
+                                      00F37H    0046AH
+                  @@LCODEL free       013A1H    00011H
+                  @@LCODEL malloc     013B2H    0000FH
+                  @@LCODEL exit       013C1H    0001CH
+                  @@LCODEL @brk       013DDH    00017H
+                  @@LCODEL @sbrk      013F4H    00042H
+* gap *                               01436H    01BCAH
+         @@CNST                       03000H    0009AH  CSEG MIRRORP
                   @@CNST   @cstart    03000H    00000H
                   @@CNST   r_main     03000H    00000H
                   @@CNST   r_systeminit
@@ -248,20 +248,20 @@ Directive:
                   @@CNST   lcd_bsp    03000H    00000H
                   @@CNST   led_bsp    03000H    00000H
                   @@CNST   seg_bsp    03000H    00000H
-                  @@CNST   display    03000H    00050H
+                  @@CNST   display    03000H    00056H
                   @@CNST   hit_the_mouse
-                                      03050H    0002AH
+                                      03056H    00044H
                   @@CNST   r_cg_timer
-                                      0307AH    00000H
+                                      0309AH    00000H
                   @@CNST   r_cg_timer_user
-                                      0307AH    00000H
-* gap *                               0307AH    0CF86H
+                                      0309AH    00000H
+* gap *                               0309AH    0CF66H
 
   MEMORY=RAM
   BASE ADDRESS=FCF00H   SIZE=03100H
          OUTPUT   INPUT    INPUT      BASE      SIZE
          SEGMENT  SEGMENT  MODULE     ADDRESS
-         @@DATA                       FCF00H    000C4H  DSEG BASEP
+         @@DATA                       FCF00H    000C6H  DSEG BASEP
                   @@DATA   @cstart    FCF00H    000BAH
                   @@DATA   r_main     FCFBAH    00002H
                   @@DATA   r_systeminit
@@ -275,25 +275,25 @@ Directive:
                   @@DATA   seg_bsp    FCFC2H    00002H
                   @@DATA   display    FCFC4H    00000H
                   @@DATA   hit_the_mouse
-                                      FCFC4H    00000H
+                                      FCFC4H    00002H
                   @@DATA   r_cg_timer
-                                      FCFC4H    00000H
+                                      FCFC6H    00000H
                   @@DATA   r_cg_timer_user
-                                      FCFC4H    00000H
-                  @@DATA   @rom       FCFC4H    00000H
-         @@INIT                       FCFC4H    00020H  DSEG BASEP
-                  @@INIT   @cstart    FCFC4H    00000H
-                  @@INIT   r_main     FCFC4H    00002H
+                                      FCFC6H    00000H
+                  @@DATA   @rom       FCFC6H    00000H
+         @@INIT                       FCFC6H    0001EH  DSEG BASEP
+                  @@INIT   @cstart    FCFC6H    00000H
+                  @@INIT   r_main     FCFC6H    00002H
                   @@INIT   r_systeminit
-                                      FCFC6H    00000H
-                  @@INIT   r_cg_cgc   FCFC6H    00000H
+                                      FCFC8H    00000H
+                  @@INIT   r_cg_cgc   FCFC8H    00000H
                   @@INIT   r_cg_cgc_user
-                                      FCFC6H    00000H
-                  @@INIT   kb_bsp     FCFC6H    00002H
-                  @@INIT   lcd_bsp    FCFC8H    00000H
-                  @@INIT   led_bsp    FCFC8H    00002H
-                  @@INIT   seg_bsp    FCFCAH    00002H
-                  @@INIT   display    FCFCCH    00002H
+                                      FCFC8H    00000H
+                  @@INIT   kb_bsp     FCFC8H    00002H
+                  @@INIT   lcd_bsp    FCFCAH    00000H
+                  @@INIT   led_bsp    FCFCAH    00002H
+                  @@INIT   seg_bsp    FCFCCH    00002H
+                  @@INIT   display    FCFCEH    00000H
                   @@INIT   hit_the_mouse
                                       FCFCEH    00016H
                   @@INIT   r_cg_timer

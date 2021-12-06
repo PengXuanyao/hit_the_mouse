@@ -89,7 +89,6 @@ void main(void)
         {
             CLEAN_SCREEN();
             record();
-            LcdFill_REC();
         }
         else if (mode == END)
         {
