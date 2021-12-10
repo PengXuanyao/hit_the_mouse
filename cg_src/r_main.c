@@ -59,22 +59,24 @@ void main(void)
 {
     static uint8_t mode = HOME;
     R_MAIN_UserInit();
+    cur_game_status.num = HARD; //设置地鼠出现的数量 HARD--->3;NORMAL--->2;EASY--->1;
     /* Start user code. Do not edit comment generated here */
     while (1U)
     {
-        // keyboard detect, record the last press
-        static uint8_t lastkey;
-        Keyboard_scan();
+        static uint8_t lastkey; // keyboard detect, record the last press
+                                // 只有在上一次按键值发生变化再切换状态
+        // 如过时间减为0，则强制游戏结束
         if (time == 0)
         {
             mode = END;
         }
+        Keyboard_scan(); //键盘扫描 同时将键盘扫描值（一个全局变量）
+        // 如果扫描键盘值为4个模式值，则改变游戏模式
         if (num_keyboard <= MODENUM && num_keyboard != 0)
         {
             mode = num_keyboard;
         }
-
-        // choose
+        // 选择游戏模式
         if (mode == HOME)
         {
             CLEAN_SCREEN();

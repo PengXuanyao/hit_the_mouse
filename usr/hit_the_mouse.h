@@ -4,7 +4,7 @@
  * @Autor: PengXuanyao
  * @Date: 2021-12-01 14:27:25
  * @LastEditors: PengXuanyao
- * @LastEditTime: 2021-12-06 16:34:19
+ * @LastEditTime: 2021-12-10 22:46:53
  */
 #ifndef __HIT_THE_MOUSE__
 #define __HIT_THE_MOUSE__
@@ -42,12 +42,10 @@ extern uint8_t score;
 extern uint8_t time;
 extern uint8_t timerflag;
 // function statement
-extern void initMap(void);
 extern void home(void);
 extern void game(void);
 extern void record(void);
 extern void freshStatus(void);
-extern void setStatusMap(Status *cur);
 extern void detectIfHit(void);
 extern void end(void);
 #endif

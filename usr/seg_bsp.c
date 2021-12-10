@@ -1,17 +1,17 @@
 /*
- * @Description: eight segment led board support package 
+ * @Description: eight segment led board support package
  * @Version: 2.0
  * @Autor: PengXuanyao
  * @Date: 2021-11-28 14:19:25
  * @LastEditors: PengXuanyao
- * @LastEditTime: 2021-12-05 20:20:50
+ * @LastEditTime: 2021-12-10 22:19:38
  */
 #include "r_cg_userdefine.h"
 volatile uint8_t flag_digital_led;
 bit bit_control;
 
 /**
- * @description: SEG PORT Init
+ * @description: led SEG PORT Init
  * @param {*}
  * @return {*}
  * @author: PengXuanyao
@@ -29,7 +29,8 @@ void Seg_Port_Init(void)
 }
 
 /**
- * @description: SEG PORT Init
+ * @description: SEG PORT Init, you can only use the Port Init or
+ *               add more function here
  * @param {*}
  * @return {*}
  * @author: PengXuanyao
@@ -40,7 +41,8 @@ void Seg_Init(void)
 }
 
 /**
- * @description: get the display code
+ * @description: get the display code, through passing the initial number to
+ * this funtion
  * @param {uint8_t } i
  * @return {*}
  * @author: PengXuanyao
@@ -126,20 +128,22 @@ uint8_t Getcode(uint8_t i) /*digital_led segment table ---->"k"*/
 }
 
 /**
- * @description: Display the number
+ * @description: Display the number by the seg
+ * this function is abandoned, and it is unconvenient to use
+ * by the way, the author is not me
  * @param {*}
  * @return {*}
- * @author: PengXuanyao
+ * @author:
  */
 void display(void)
 {
     static uint8_t count = 0;
-    array_key[0] = num_keyboard % 10; //the second char
-    array_key[1] = num_keyboard / 10; //the front char
+    array_key[0] = num_keyboard % 10; // the second char
+    array_key[1] = num_keyboard / 10; // the front char
     if (count < 2)
     {
         if (count == 0)
-            bit_control = 1; //from bit4 to bit1
+            bit_control = 1; // from bit4 to bit1
         if (count == 1)
             bit_control = 0;
         DIGTAL_LED_D4 = ~bit_control;
@@ -159,6 +163,8 @@ void display(void)
 }
 /**
  * @description: show the high(first 2 seg) and low(last 2 seg) number
+ * this is written by myself, and it is easy to use, by passing the two
+ * part of the number.
  * @param {uint8_t} numh
  * @param {uint8_t} numl
  * @return {*}
@@ -166,11 +172,11 @@ void display(void)
  */
 void displayNum(uint8_t numh, uint8_t numl)
 {
-    static uint8_t count = 0;
-    array_key[0] = numh / 10; //the second char
-    array_key[1] = numh % 10; //the first char
-    array_key[2] = numl / 10; //the thrid char
-    array_key[3] = numl % 10; //the last char
+    static uint8_t count = 0; // used to scan the four different led segment
+    array_key[0] = numh / 10; // get the second char
+    array_key[1] = numh % 10; // get the first char
+    array_key[2] = numl / 10; // get the thrid char
+    array_key[3] = numl % 10; // get the last char
     switch (count)
     {
     case 0:

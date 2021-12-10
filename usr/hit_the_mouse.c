@@ -4,52 +4,35 @@
  * @Autor: PengXuanyao
  * @Date: 2021-12-01 14:13:17
  * @LastEditors: PengXuanyao
- * @LastEditTime: 2021-12-06 16:41:20
+ * @LastEditTime: 2021-12-10 23:09:42
  */
 
 #include "r_cg_userdefine.h"
-uint8_t map[MAPHET][MAPWID] = {0};     // the map is decided by the screen size
-Status cur_game_status = {HARD, NULL}; // current status
-uint8_t diff = EAZY;                   // difficulty is set
-uint8_t myrecord = 0;                  // initial record is 0
-uint8_t score = 0;                     // current score
-uint8_t time = 59;                     // 1 minute count
-uint8_t timerflag = 0;                 // timer flag to start the timer,when first into game
+Status cur_game_status; // current status
+uint8_t diff = EAZY;    // difficulty is set
+uint8_t myrecord = 0;   // initial record is 0
+uint8_t score = 0;      // current score
+uint8_t time = 59;      // 1 minute count
+uint8_t timerflag = 0;  // timer flag to start the timer,when first into game
 // functions
 /**
- * @description: clear the status map
- * @param {*}
- * @return {*}
- * @author: PengXuanyao
- */
-void initMap(void)
-{
-    uint8_t i, j;
-    for (i = 0; i < MAPHET; i++)
-    {
-        for (j = 0; j < MAPWID; j++)
-        {
-            map[MAPHET][MAPWID] = 0;
-        }
-    }
-}
-/**
  * @description: back to home state
+ * 首页界面，进行功能按键的展示
  * @param {*}
  * @return {*}
  * @author: PengXuanyao
  */
 void home(void)
 {
-    R_TAU0_Channel2_Stop();
-    showHome();
-    initMap();
+    R_TAU0_Channel2_Stop(); //停止计数器计数
+    showHome();             //展示home界面
     score = 0;
     timerflag = 0;
     time = 60;
 }
 /**
  * @description: game status is on
+ * 游戏开始模式，用于刷新状态下显示
  * @param {*}
  * @return {*}
  * @author: PengXuanyao
@@ -60,27 +43,59 @@ void game(void)
     // used to fresh the status
     if (timerflag == 0)
     {
+        //第一次进入后开始计时，并清零得分
         score = 0;
+        //时间为60s
         time = 60;
+        //打开定时器
         R_TAU0_Channel2_Start();
     }
+    //检查是否有地鼠被打
     detectIfHit();
+    //展示当前界面
     curDisplay();
+    //刷新频率大概略小于1000 / 5 = 200Hz
     delay_ms(5);
+    // 计时标志置位，下次不再开始重新计时
     timerflag = 1;
 }
 /**
  * @description: show the record
+ * 展示最高记录
  * @param {*}
  * @return {*}
  * @author: PengXuanyao
  */
 void record(void)
 {
+    char text_buffer[BUFFERLENTH];                              //字符容器
+    timerflag = 0;                                              //计时标志清零，以便下一次进入game打开
+    time = 60;                                                  //时间初始，置位60
+    R_TAU0_Channel2_Stop();                                     //关闭定时器
+    sprintf(text_buffer, "your highest score:%d   ", myrecord); //生成字符串
+    lcd_display(16, text_buffer);                               //显示字符
+    delay_ms(5);
+}
+/**
+ * @description:显示结束界面
+ * @param {*}
+ * @return {*}
+ * @author: PengXuanyao
+ */
+void end(void)
+{
     char text_buffer[BUFFERLENTH];
     timerflag = 0;
-    time = 60;
     R_TAU0_Channel2_Stop();
+    //显示得分
+    sprintf(text_buffer, "your score:%d   ", score);
+    lcd_display(0, text_buffer);
+    if (score >= myrecord)
+    {
+        //记录最高分
+        myrecord = score;
+    }
+    //显示最高分
     sprintf(text_buffer, "your highest score:%d   ", myrecord);
     lcd_display(16, text_buffer);
     delay_ms(5);
@@ -94,18 +109,19 @@ void record(void)
 void freshStatus(void)
 {
     uint8_t i;
+    //记录上一秒得分
     static uint8_t last_score;
+    //随机生成三个点
     for (i = 0; i < cur_game_status.num; i++)
     {
-        cur_game_status.pos[i] = 3;           // random 3 points
         cur_game_status.pos[i] = rand() % 12; // random 3 points
     }
-    setStatusMap(&cur_game_status);
+    //比较得到上一秒得分，通过LED显示
     switch (score - last_score)
     {
     case 0:
-	LED_ALL_OFF();
-        break;    
+        LED_ALL_OFF();
+        break;
     case 1:
         LED_ALL_OFF();
         L1_ON();
@@ -125,24 +141,7 @@ void freshStatus(void)
     last_score = score;
 };
 /**
- * @description: set the map
- * @param {Status} cur
- * @return {*}
- * @author: PengXuanyao
- */
-void setStatusMap(Status *cur)
-{
-    uint8_t i;
-    uint8_t *p = cur->pos;
-    initMap();
-    for (i = 0; i < cur->num; i++)
-    {
-        map[*(p) / 4][*(p) % 4] = 1;
-        p++;
-    }
-}
-/**
- * @description:
+ * @description:检测是否有地鼠被打中
  * @param {*}
  * @return {*}
  * @author: PengXuanyao
@@ -150,34 +149,15 @@ void setStatusMap(Status *cur)
 void detectIfHit(void)
 {
     uint8_t i;
+    //检查每一个地鼠的位置
     for (i = 0; i < cur_game_status.num; i++)
     {
-
+        //将地鼠的坐标值值和当前键盘值作比较
+        //键盘上范围为5~16，实际坐标为0~11；即做了-5操作转换
         if ((num_keyboard - 5) == cur_game_status.pos[i]) // use the key 5-16 as the keyboard
         {
             score++;
             cur_game_status.pos[i] = 50; // set the position invalid
         }
     }
-}
-/**
- * @description:
- * @param {*}
- * @return {*}
- * @author: PengXuanyao
- */
-void end(void)
-{
-    char text_buffer[BUFFERLENTH];
-    timerflag = 0;
-    R_TAU0_Channel2_Stop();
-    sprintf(text_buffer, "your score:%d   ", score);
-    if (score >= myrecord)
-    {
-        myrecord = score;
-    }
-    lcd_display(0, text_buffer);
-    sprintf(text_buffer, "your highest score:%d   ", myrecord);
-    lcd_display(16, text_buffer);
-    delay_ms(5);
 }
